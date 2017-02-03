@@ -1,0 +1,7 @@
+select count(*) from (
+select distinct * from frequency one
+join frequency two
+on one.docid = two.docid
+where one.term = 'transactions'
+and two.term = 'world'
+);

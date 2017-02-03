@@ -1,0 +1,5 @@
+select A.docid, B.docid, sum( A.count * B.count) from (select term, docid, count from frequency_q
+) as A, (select docid, term, count from frequency_q) as B
+where A.docid = 'q'
+and A.term = B.term
+group by A.docid, B.docid;
